@@ -12,24 +12,28 @@ class NotesController {
       user_id,
     });
 
-    const linksInsert = links.map((link) => {
-      return {
-        note_id,
-        url: link,
-      };
-    });
+    if (links.length > 0) {
+      const linksInsert = links.map((link) => {
+        return {
+          note_id,
+          url: link,
+        };
+      });
 
-    await knex('links').insert(linksInsert);
+      await knex('links').insert(linksInsert);
+    }
 
-    const tagsInsert = tags.map((name) => {
-      return {
-        note_id,
-        name,
-        user_id,
-      };
-    });
+    if (tags.length > 0) {
+      const tagsInsert = tags.map((name) => {
+        return {
+          note_id,
+          name,
+          user_id,
+        };
+      });
 
-    await knex('tags').insert(tagsInsert);
+      await knex('tags').insert(tagsInsert);
+    }
 
     return response.json();
   }
