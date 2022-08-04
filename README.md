@@ -9,7 +9,7 @@ Clique <a href="https://userocketnotes.netlify.app/" target="_blank">aqui</a> pa
 
 ### Preview
 
-<img src="./GitHub/preview.gif" width="680px" >
+<img src="./.github/preview.gif" width="680px" >
 
 ### Setup
 
